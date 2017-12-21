@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Smart phones of all sizes and brand for all">
+    <meta name="author" content="Olawuni Michael Sunday">
+    <title>MarkWebsite - Welcome</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+  </head>
+  <body>
+    <header>
+		<div class="container">
+			<div id="brand">
+			  <h1><a href="index.html"></i> <span class="highlight">Mark</span> Communications</a></h1>
+			</div>
+			<nav>
+			  <ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li class="current"><a href="gallery.html">Gallery</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			  </ul>
+			</nav>
+		 </div>
+    </header>
+
+
+		<!-- Container for the image gallery -->
+		<div class="container">
+
+		  <!-- Full-width images with number text -->
+		  <div class="gallery">
+			<div class="slideNumber">1 / 8</div>
+			  <img src="images/android.jpeg" style="width:100%">
+		  </div>
+
+		  <div class="gallery">
+			<div class="slideNumber">2 / 8</div>
+			  <img src="images/iphone.jpeg" style="width:100%">
+		  </div>
+
+		  <div class="gallery">
+			<div class="slideNumber">3 / 8</div>
+			  <img src="images/iphone2.jpeg" style="width:100%">
+		  </div>
+
+		  <div class="gallery">
+			<div class="slideNumber">4 / 8</div>
+			  <img src="images/photo230544.jpeg" style="width:100%">
+		  </div>
+
+		  <div class="gallery">
+			<div class="slideNumber">5 / 8</div>
+			  <img src="images/samsung.jpeg" style="width:100%">
+		  </div>
+
+		  <div class="gallery">
+			<div class="slideNumber">6 / 8</div>
+			  <img src="images/smartphones.jpeg" style="width:100%">
+		  </div>
+		  
+		  <div class="gallery">
+			<div class="slideNumber">7 / 8</div>
+			  <img src="images/tab.jpg" style="width:100%">
+		  </div>
+		  
+		  <div class="gallery">
+			<div class="slideNumber">8 / 8</div>
+			  <img src="images/techno.jpeg" style="width:100%">
+		  </div>
+
+		  <!-- Next and previous buttons -->
+		  <a class="prev" onclick="slidesShow(-1)">&#10094;</a>
+		  <a class="next" onclick="slidesShow(1)">&#10095;</a>
+
+		  <!-- Image text -->
+		  <div class="caption-container">
+			<p id="caption"></p>
+		  </div>
+
+		  <!-- Thumbnail images -->
+		  <div class="row">
+			<div class="thumbsnail-column">
+			  <img class="effect cursor" src="images/android.jpeg" style="width:100%" onclick="currentSlide(1)" alt="Android Phone">
+			</div>
+			<div class="thumbsnail-column">
+			  <img class="effect cursor" src="images/iphone.jpeg" style="width:100%" onclick="currentSlide(2)" alt="iphones 1">
+			</div>
+			<div class="thumbsnail-column">
+			  <img class="effect cursor" src="images/iphone2.jpeg" style="width:100%" onclick="currentSlide(3)" alt="iphones 2">
+			</div>
+			<div class="thumbsnail-column">
+			  <img class="effect cursor" src="images/photo230544.jpeg" style="width:100%" onclick="currentSlide(4)" alt="Phone Picture">
+			</div>
+			<div class="thumbsnail-column">
+			  <img class="effect cursor" <img src="images/samsung.jpeg" style="width:100%" style="width:100%" onclick="currentSlide(5)" alt="Samsung ">
+			</div> 
+			<div class="thumbsnail-column">
+			  <img class="effect cursor" src="images/smartphones.jpeg" style="width:100%" onclick="currentSlide(6)" alt="Smart phones">
+			</div>
+			<div class="thumbsnail-column">
+			  <img class="effect cursor" src="images/tab.jpg" style="width:100%" onclick="currentSlide(7)" alt="Tab">
+			</div>
+			<div class="thumbsnail-column">
+			  <img class="effect cursor" src="images/techno.jpeg" style="width:100%" onclick="currentSlide(8)" alt="Techno Phones">
+			</div>
+		  </div>
+		  
+		</div>
+	<footer>
+      <p>Mark Communications, Copyright &copy; 2017</p>
+    </footer>
+	
+	<script type="text/javascript">
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+		// Next/previous controls
+		function slidesShow(n) {
+		  showSlides(slideIndex += n);
+		}
+
+		// Thumbnail image controls
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("gallery");
+		  var dots = document.getElementsByClassName("effect");
+		  var captionText = document.getElementById("caption");
+		  if (n > slides.length) {slideIndex = 1}
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";
+		  }
+		  for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";
+		  dots[slideIndex-1].className += " active";
+		  captionText.innerHTML = dots[slideIndex-1].alt;
+		  setTimeout(showSlides, 2000);
+		}
+	</script>
+  </body>
+</html>
